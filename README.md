@@ -1,6 +1,8 @@
 # django
 Criação de repositório para treinar curso em Django
 
+[![Build Status](https://travis-ci.org/avellar1975/django.svg?branch=master)](https://travis-ci.org/avellar1975/django)
+
 
 ## 1.  Criar repositório com README, LICENCE e gitignore (python)
 
@@ -32,4 +34,22 @@ python3.8 -m pipenv install
 python3.8 -m pipenv install django
 
 python3.8 -m pipenv install -d flake8
+```
+## 4. Ativar o ambiente virtual
+
+```
+python3.8 -m pipenv shell
+```
+
+## 5. Ativar integração com Travis-CI
+<p>Ativar seu repositório no site TRAVIS-CI</p>
+<p>Criar o arquivo .travis.yml</p>
+
+## 6. Integrar com o Pyup
+<p>Criar o arquivo .pyup.yml com o conteúdo:</p>
+
+```
+requirements:
+  - Pipfile
+  - Pipfile.lock
 ```
