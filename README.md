@@ -23,7 +23,9 @@ python3.8 -m pipenv install
 ```
 <p>Isso ai criar os arquivos Pipfile, Pipfile.lock e a pasta .venv</p>
 
-## 3. Instalar a biblioteca django no pipenv
+## 3. Instalar a biblioteca django e flake8 via pipenv
 ```
 python3.8 -m pipenv install django
+
+python3.8 -m pipenv install -d flake8
 ```
