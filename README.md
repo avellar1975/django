@@ -53,3 +53,5 @@ requirements:
   - Pipfile
   - Pipfile.lock
 ```
+<p> Adicionar o repositório no pyup.io e quando subir o commit vai aparecer uma
+issue para confirmar a integração com o Pyup.</p>
