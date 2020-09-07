@@ -2,7 +2,8 @@
 Criação de repositório para treinar curso em Django
 
 [![Build Status](https://travis-ci.org/avellar1975/django.svg?branch=master)](https://travis-ci.org/avellar1975/django)
-
+[![Updates](https://pyup.io/repos/github/avellar1975/django/shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
+[![Python 3](https://pyup.io/repos/github/avellar1975/django/python-3-shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
 
 ## 1.  Criar repositório com README, LICENCE e gitignore (python)
 
@@ -35,6 +36,15 @@ python3.8 -m pipenv install django
 
 python3.8 -m pipenv install -d flake8
 ```
+
+<p>Para que o flake8 não faça a verificação dos arquivos do .venv é preciso
+criar um arquivo .flake8 com o seguinte conteúdo:</p>
+
+```
+[flake8]
+exclude=.venv
+```
+
 ## 4. Ativar o ambiente virtual
 
 ```
