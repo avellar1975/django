@@ -9,6 +9,7 @@ na máquina local.</p>
 ```
 git clone git@github.com:avellar1975/django.git
 ```
+
 ## 2. Criar o pipenv dentro da pasta do projeto
 <p>Inserir no arquivo ~/.bashrc a seguinte variável de ambiente:</p>
 
