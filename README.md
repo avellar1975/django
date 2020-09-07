@@ -76,3 +76,25 @@ $ django-admin startproject pypro .
 <p>Para visualizar os comando o manage.py <kbd>python manage.py</kbd>, para executar
 o servidor do Django <kbd>python manage.py runserver</kbd>, para parar o servidor
 <kbd>CONTROL-C</kbd></p>
+
+## 8. Publicação no heroku
+
+Instalar o cliente do heroku
+<kbd>curl https://cli-assets.heroku.com/install.sh | sh</kbd>
+
+ALLOWED_HOSTS = ['*'] # Arquivo pypro/settings.py
+
+Criar o arquivo Procfile na raiz do Projeto
+
+```
+python3.8 -m pipenv install gunicorn
+
+heroku apps:create python-avellar-django
+```
+Realizar o git add., git commit e git push heroku master:master -f
+
+heroku config:set DISABLE_COLLECTSTATIC=1
+
+git push heroku master:master -f
+
+heroku open
