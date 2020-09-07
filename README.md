@@ -65,3 +65,14 @@ requirements:
 ```
 <p> Adicionar o repositório no pyup.io e quando subir o commit vai aparecer uma
 issue para confirmar a integração com o Pyup.</p>
+
+## 7.Setup de Projeto e Arquivo Manage
+
+```
+$ django-admin startproject pypro .
+```
+<p>Cria estrutura inicial do projeto com diretório pypro e arquivo manage.py</p>
+
+<p>Para visualizar os comando o manage.py <kbd>python manage.py</kbd>, para executar
+o servidor do Django <kbd>python manage.py runserver</kbd>, para parar o servidor
+<kbd>CONTROL-C</kbd></p>
