@@ -73,28 +73,36 @@ $ django-admin startproject pypro .
 ```
 <p>Cria estrutura inicial do projeto com diretório pypro e arquivo manage.py</p>
 
-<p>Para visualizar os comando o manage.py <kbd>python manage.py</kbd>, para executar
+<p>Para visualizar os comando do manage <kbd>python manage.py</kbd>, para executar
 o servidor do Django <kbd>python manage.py runserver</kbd>, para parar o servidor
 <kbd>CONTROL-C</kbd></p>
 
 ## 8. Publicação no heroku
 
-Instalar o cliente do heroku
+* Instalar o cliente do heroku através do comando (no Ubuntu ou Debian):
+
 <kbd>curl https://cli-assets.heroku.com/install.sh | sh</kbd>
 
-ALLOWED_HOSTS = ['*'] # Arquivo pypro/settings.py
+* Editar a linha do arquivo `pypro/settings.py`
+`ALLOWED_HOSTS = ['*']`
 
-Criar o arquivo Procfile na raiz do Projeto
+* Criar o arquivo Procfile na raiz do Projeto
 
+* Instalar o gunicorn e executar o comando do heroku:
 ```
 python3.8 -m pipenv install gunicorn
 
 heroku apps:create python-avellar-django
 ```
-Realizar o git add., git commit e git push heroku master:master -f
+* Realizar os comandos do git: <kbd>git add .</kbd>, <kbd>git commit</kbd> e <kbd>it push heroku master:master -f</kbd>
 
+Vai dar um erro que pode ser corrigido através do comando abaixo:
+ 
+```
 heroku config:set DISABLE_COLLECTSTATIC=1
+```
+* Repetir o comando do push
+`git push heroku master:master -f`
 
-git push heroku master:master -f
-
-heroku open
+* Abrir o site:
+`heroku open`
