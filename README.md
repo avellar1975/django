@@ -117,7 +117,7 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 
 * Marcar a opção Wait for CI to pass before deploy e clicar em Enable Automatic Deploys
 
-## Olá Django
+## 10. Olá Django
 
 * Estando no ambiente virtual, criar um app através do comando `python -m manage.py startapp base`
 
@@ -152,3 +152,22 @@ urlpatterns = [
 
 ```
 * Apagar a pasta migrations e demais arquivos da pasta base, mantendo somente o arquivo views.py
+
+## 11. Pyteste django
+
+* Instalar o plugin de teste `python3.8 -m pipenv install 'pytest-django'`
+
+* Criar o arquivo pytest.ini na raiz do projeto com o seguinte conteúdo:
+
+```
+# -- FILE: pytest.ini (or tox.ini)
+[pytest]
+DJANGO_SETTINGS_MODULE = pypro.settings
+# -- recommended but optional:
+python_files = tests.py test_*.py *_tests.py
+```
+* Criar pastas tests dentro do diretório base, com os arquivos __init__.py e test_home.py
+
+* Executar o pytest dentro o ambiente virtual PIPENV_VENV_IN_PROJECT
+
+* Alterar o .traves.yml incluindo no script a linha `- pipenv run pytest`
