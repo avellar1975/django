@@ -116,3 +116,39 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 * Conectar o repositório do Github no heroku
 
 * Marcar a opção Wait for CI to pass before deploy e clicar em Enable Automatic Deploys
+
+## Olá Django
+
+* Estando no ambiente virtual, criar um app através do comando `python -m manage.py startapp base`
+
+* Editar o arquivo views.py com o seguinte conteúdo:
+
+```
+from django.shortcuts import render
+from djando.http import HttpResponse
+
+# Create your views here.
+
+
+def home(request):
+    return HttpResponse('Olá Django')
+```
+
+* Executar o servidor localmente `python manage.py runserver`
+
+* Inserir em settings.py, na lista de INSTALLED_APPS a linha: `pypro.base`
+
+* Editar o arquivo urls.py para conter o código abaixo:
+
+```
+from django.contrib import admin
+from django.urls import path
+from pypro.base.views import home
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home),
+]
+
+```
+* Apagar a pasta migrations e demais arquivos da pasta base, mantendo somente o arquivo views.py
