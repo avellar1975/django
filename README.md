@@ -5,6 +5,8 @@ Criação de repositório para treinar curso em Django
 [![Updates](https://pyup.io/repos/github/avellar1975/django/shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
 [![Python 3](https://pyup.io/repos/github/avellar1975/django/python-3-shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
 
+https://python-avellar-django.herokuapp.com/
+
 ## 1.  Criar repositório com README, LICENCE e gitignore (python)
 
 <p>Após criar o repositório público com os três arquivos, clonar o repositório
@@ -97,7 +99,7 @@ heroku apps:create python-avellar-django
 * Realizar os comandos do git: <kbd>git add .</kbd>, <kbd>git commit</kbd> e <kbd>it push heroku master:master -f</kbd>
 
 Vai dar um erro que pode ser corrigido através do comando abaixo:
- 
+
 ```
 heroku config:set DISABLE_COLLECTSTATIC=1
 ```
@@ -106,3 +108,11 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 
 * Abrir o site:
 `heroku open`
+
+## 9. Deploy automático
+
+* Acessar a aplicação no heroku, aba Deploy
+
+* Conectar o repositório do Github no heroku
+
+* Marcar a opção Wait for CI to pass before deploy e clicar em Enable Automatic Deploys
