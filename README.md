@@ -187,3 +187,17 @@ python_files = tests.py test_*.py *_tests.py
 after_success:
   - pipenv run codecov
 ```
+
+## 13. Lib Python Decouple
+
+* Instalar a lib python-decouple através do comando `python3.8 -m pipenv install python-decouple`
+
+* Importar a biblioteca no arquivo settings.py `from decouple import config` e setar a variável `DEBUG = config('DEBUG', cast=bool)`
+
+* Criar um arquivo `.env` com o conteúdo `DEBUG=True`, na raiz do Projeto
+
+* Comando para passar a variável DEBUG para o heroku: `heroku config:set DEBUG=False`
+
+* Criar na raiz uma pasta contrib e compiar o arquivo .env com o nome de env-sample
+
+* Incluir na parte de install do .travis.yml a linha `  - cp contrib/env-sample .env`
