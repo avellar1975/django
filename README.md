@@ -171,3 +171,18 @@ python_files = tests.py test_*.py *_tests.py
 * Executar o pytest dentro o ambiente virtual PIPENV_VENV_IN_PROJECT
 
 * Alterar o .traves.yml incluindo no script a linha `- pipenv run pytest`
+
+## 12. Cobertura de Testes
+
+* Instalar as bibliotecas de cobertura pytest-cov e codecov através do comando `python3.8 -m pipenv install --dev 'pytest-cov' codecov`
+
+* Executar o comando `python3.8 -m pipenv run pytest --cov=pypro`
+
+* Adequar o script de teste do .travis.yml para contemplar a opção --cov
+
+* Inserir no .travis.yml o código abaixo:
+
+```
+after_success:
+  - pipenv run codecov
+```
