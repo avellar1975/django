@@ -201,3 +201,21 @@ after_success:
 * Criar na raiz uma pasta contrib e compiar o arquivo .env com o nome de env-sample
 
 * Incluir na parte de install do .travis.yml a linha `  - cp contrib/env-sample .env`
+
+## 14. Secret key
+
+* No arquivo settings.py alterar o valor da constante `SECRET_KEY = config('SECRET_KEY')`
+
+* Incluir no arquivo contrib/env-sample `SECRET_KEY='Defina aqui sua chave secreta'`
+
+* Incluir no arquivo .env `SECRET_KEY='Chave secreta'`
+
+* Gerar chave no console python através da função:
+```
+>>> from django.core.management.utils import get_random_secret_key
+>>> get_random_secret_key()
+```
+
+Setando no Heroku:
+
+`heroku config:set SECRET_KEY=<sua_chave_secreta>`
