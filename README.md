@@ -4,6 +4,7 @@ Criação de repositório para treinar curso em Django
 [![Build Status](https://travis-ci.org/avellar1975/django.svg?branch=master)](https://travis-ci.org/avellar1975/django)
 [![Updates](https://pyup.io/repos/github/avellar1975/django/shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
 [![Python 3](https://pyup.io/repos/github/avellar1975/django/python-3-shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
+[![codecov](https://codecov.io/gh/avellar1975/django/branch/master/graph/badge.svg)](https://codecov.io/gh/avellar1975/django)
 
 https://python-avellar-django.herokuapp.com/
 
