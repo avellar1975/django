@@ -219,3 +219,17 @@ after_success:
 Setando no Heroku:
 
 `heroku config:set SECRET_KEY=<sua_chave_secreta>`
+
+## 15. Domínio e ALLOWED_HOSTS
+
+* `heroku domains:add SEUDOMINIO.com`
+
+* Será gerado uma url para configurar no servidor de DNS, na Zona DNS do domínio utilizando o tipo CNAME
+
+* Inserir no importe `from decouple import config, Csv`
+
+* Configurar o settings.py, variável ALLOWED_HOSTS com o conteúdo `ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())`
+
+* Atualizar o .env e contrib/env-sample com a linha `ALLOWED_HOSTS=localhost, 127.0.0.1`
+
+* `heroku config:set ALLOWED_HOSTS='python.radikaro.com, python-avellar-django.herokuapp.com'`
