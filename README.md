@@ -256,3 +256,22 @@ DATABASES = {
                       cast=parse_database)
 }
 ```
+<p>Importante dizer que se fizer chegar esse commit na master vai dar erro no heroku, pois depende dos passoas da próxima aula.
+
+## 17. Testando Postgresql no Travis
+
+* Instalar a biblioteca `pipenv install psycopg2-binary`
+
+* Alterar o arquivo .travis.yml
+
+```
+services:
+  postgresql
+addons:
+  postgresql: '9.5'
+
+
+  before_script:
+    - psql -c "CREATE DATABASE testdb;" -U postgres
+```
+* Alterar o arquivo env-sample inserindo a variável: `DATABASE_URL=postgres://postgres:postgres@localhost/testdb`
