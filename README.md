@@ -373,4 +373,9 @@ INSTALLED_APPS = [
 
 ```
 
-* No arquivo settings.py inserir a variável `COLLECTFAST_ENABLE = False` fora do if da AWS e `COLLECTFAST_ENABLE = True` dentro do if.
+* No arquivo settings.py inserir a variável `COLLECTFAST_ENABLE = False` fora do if da AWS e dentro do if:
+
+```
+COLLECTFAST_ENABLE = True
+COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+```
