@@ -6,7 +6,7 @@ Criação de repositório para treinar curso em Django
 [![Python 3](https://pyup.io/repos/github/avellar1975/django/python-3-shield.svg)](https://pyup.io/repos/github/avellar1975/django/)
 [![codecov](https://codecov.io/gh/avellar1975/django/branch/master/graph/badge.svg)](https://codecov.io/gh/avellar1975/django)
 
-https://python-avellar-django.herokuapp.com/
+https://python.radikaro.com/
 
 ## 1.  Criar repositório com README, LICENCE e gitignore (python)
 
@@ -27,17 +27,17 @@ git clone git@github.com:avellar1975/django.git
 ```
 cd django
 
-python3.8 -m pipenv install
+pipenv install
 ```
-
+<p>Para utilizar o comando pipenv no meu sistema operacional precisei criar um alias para não ter que ficar digitando <kbd>python3.8 -m pipenv ...</kbd>, a criação de um alias no Linux: `alias pipenv='python3.8 -m pipenv'`</p>
 <p>Isso ai criar os arquivos Pipfile, Pipfile.lock e a pasta .venv</p>
 
 ## 3. Instalar a biblioteca django e flake8 via pipenv
 
 ```
-python3.8 -m pipenv install django
+pipenv install django
 
-python3.8 -m pipenv install -d flake8
+pipenv install -d flake8
 ```
 
 <p>Para que o flake8 não faça a verificação dos arquivos do .venv é preciso
@@ -51,8 +51,9 @@ exclude=.venv
 ## 4. Ativar o ambiente virtual
 
 ```
-python3.8 -m pipenv shell
+pipenv shell
 ```
+<p>Quando preciso instalar uma nova biblioteca no pipenv primeiro saio do ambiente virtual através do comando `exit`.</p>
 
 ## 5. Ativar integração com Travis-CI
 <p>Ativar seu repositório no site TRAVIS-CI</p>
@@ -93,7 +94,7 @@ o servidor do Django <kbd>python manage.py runserver</kbd>, para parar o servido
 
 * Instalar o gunicorn e executar o comando do heroku:
 ```
-python3.8 -m pipenv install gunicorn
+pipenv install gunicorn
 
 heroku apps:create python-avellar-django
 ```
@@ -156,7 +157,7 @@ urlpatterns = [
 
 ## 11. Pyteste django
 
-* Instalar o plugin de teste `python3.8 -m pipenv install 'pytest-django'`
+* Instalar o plugin de teste `pipenv install 'pytest-django'`
 
 * Criar o arquivo pytest.ini na raiz do projeto com o seguinte conteúdo:
 
@@ -175,9 +176,9 @@ python_files = tests.py test_*.py *_tests.py
 
 ## 12. Cobertura de Testes
 
-* Instalar as bibliotecas de cobertura pytest-cov e codecov através do comando `python3.8 -m pipenv install --dev 'pytest-cov' codecov`
+* Instalar as bibliotecas de cobertura pytest-cov e codecov através do comando `pipenv install --dev 'pytest-cov' codecov`
 
-* Executar o comando `python3.8 -m pipenv run pytest --cov=pypro`
+* Executar o comando `pipenv run pytest --cov=pypro`
 
 * Adequar o script de teste do .travis.yml para contemplar a opção --cov
 
@@ -190,7 +191,7 @@ after_success:
 
 ## 13. Lib Python Decouple
 
-* Instalar a lib python-decouple através do comando `python3.8 -m pipenv install python-decouple`
+* Instalar a lib python-decouple através do comando `pipenv install python-decouple`
 
 * Importar a biblioteca no arquivo settings.py `from decouple import config` e setar a variável `DEBUG = config('DEBUG', cast=bool)`
 
@@ -233,3 +234,53 @@ Setando no Heroku:
 * Atualizar o .env e contrib/env-sample com a linha `ALLOWED_HOSTS=localhost, 127.0.0.1`
 
 * `heroku config:set ALLOWED_HOSTS='python.radikaro.com, python-avellar-django.herokuapp.com'`
+
+## 16. Endereço de Banco de Dados
+
+* Instalar a biblioteca `pipenv install dj-database-url`
+
+* Importar a biblioteca no settings.py: `import dj_database_url`
+
+* Importar a função partial, `from functools import partial`
+
+* Alterar o arquivo settings.py
+
+```
+default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
+parse_database = partial(dj_database_url.parse, conn_max_age=600)
+
+DATABASES = {
+    'default': config('DATABASE_URL',
+                      default=default_db_url,
+                      cast=parse_database)
+}
+```
+<p>Importante dizer que se fizer chegar esse commit na master vai dar erro no heroku, pois depende dos passoas da próxima aula.
+
+## 17. Testando Postgresql no Travis
+
+* Instalar a biblioteca `pipenv install psycopg2-binary`
+
+* Alterar o arquivo .travis.yml
+
+```
+services:
+  postgresql
+addons:
+  postgresql: '9.5'
+
+
+  before_script:
+    - psql -c "CREATE DATABASE testdb;" -U postgres
+```
+* Alterar o arquivo env-sample inserindo a variável: `DATABASE_URL=postgres://postgres:postgres@localhost/testdb`
+
+## 18. Lingua e Fuso Horário
+
+* Alterar no settings.py:
+```
+LANGUAGE_CODE = 'pt-br'
+
+TIME_ZONE = 'America/Sao_Paulo'
+```
