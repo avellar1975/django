@@ -275,3 +275,12 @@ addons:
     - psql -c "CREATE DATABASE testdb;" -U postgres
 ```
 * Alterar o arquivo env-sample inserindo a variável: `DATABASE_URL=postgres://postgres:postgres@localhost/testdb`
+
+## 18. Lingua e Fuso Horário
+
+* Alterar no settings.py:
+```
+LANGUAGE_CODE = 'pt-br'
+
+TIME_ZONE = 'America/Sao_Paulo'
+```
