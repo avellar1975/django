@@ -1,2 +1,2 @@
 [flake8]
-exclude=.venv, pypro/settings.py
+exclude=.venv, pypro/settings.py, pypro/base/models.py, pypro/base/admin.py, pypro/base/migrations/*
