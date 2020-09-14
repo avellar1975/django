@@ -379,3 +379,15 @@ INSTALLED_APPS = [
 COLLECTFAST_ENABLE = True
 COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 ```
+
+## 21. Comando Makemigrations
+
+* Deixar em branco a variável `REQUIRED_FIELDS = []` do arquivo models.py
+
+* Executar o comando `python manager.py makemigrations base`
+
+* Executar o comando `python manager.py migrate`
+
+* Executar o comando `python manage.py createsuperuser`
+
+* Criar o arquivo base/admin.py
