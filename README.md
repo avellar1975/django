@@ -395,3 +395,4 @@ COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 ## 22. Aplicando Migrações no Heroku
 
 * Acrescentar no início do arquivo Procfile `release: python manage.py migrate --noinput`
+
