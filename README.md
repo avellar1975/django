@@ -344,7 +344,7 @@ if AWS_ACCESS_KEY_ID:
 
 * Executar o comando `python manage.py collectstatic --no-input`
 
-* Atualizar o arquivo env-sample:
+* Atualizar o arquivo env-sample:heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Sao_Paulo'
 ```
 # Configurações da AWS
 AWS_ACCESS_KEY_ID=
@@ -397,3 +397,15 @@ COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 * Acrescentar no início do arquivo Procfile `release: python manage.py migrate --noinput`
 
 * Executar o comando `heroku run python manage.py createsuperuser`
+
+## 23. Backup do postgresql
+
+* Comando para agendar `heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Sao_Paulo'`
+
+* Comando para consultar o agendamento `heroku pg:backups:schedules`
+
+* Comando para consultar backups disponíveis `heroku pg:backups:schedules`
+
+## 24. Django Debug Toolbar
+
+* Instalar a biblioteca `pipenv install django-debug-toolbar`
