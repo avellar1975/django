@@ -396,3 +396,4 @@ COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 
 * Acrescentar no início do arquivo Procfile `release: python manage.py migrate --noinput`
 
+* Executar o comando `heroku run python manage.py createsuperuser`
