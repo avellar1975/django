@@ -409,3 +409,50 @@ COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
 ## 24. Django Debug Toolbar
 
 * Instalar a biblioteca `pipenv install django-debug-toolbar`
+
+* Inserir no arquivo settings.py:
+```
+# Configuração Django Debug toolbar
+
+INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv(), default='127.0.0.1')
+
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
+```
+* Editar o arquivo urls.py
+
+```
+from django.conf import settings
+from django.contrib import admin
+from django.urls import path, include
+
+from pypro.base.views import home
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home),
+]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns.append(
+        path('__debug__/', include(debug_toolbar.urls))
+        )
+
+```
+
+* Inserir no arquivo env-sample a variável `INTERNAL_IPS=127.0.0.1`
+
+* Alterar a função home() do arquivo views para:
+```
+def home(request):
+    return HttpResponse('<html><body>Olá Django</body></html>')
+```
+
+* Rodar o comando `python manage.py collectstatic`
+
+* Executar o servidor local `python manage.py runserver`
+
+* Fazer o deploy no heroku
