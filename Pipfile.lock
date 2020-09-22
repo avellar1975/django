@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "18fcc016d4476bd882e5ee5c56a54964290207701b9677517ba117b62882f0c5"
+            "sha256": "b70cf14146be547021ce54437d76ce81066f0fbaccb6f2d6b53e390ae8c4daaa"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -38,6 +38,13 @@
             ],
             "version": "==1.18.2"
         },
+        "certifi": {
+            "hashes": [
+                "sha256:5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3",
+                "sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"
+            ],
+            "version": "==2020.6.20"
+        },
         "collectfast": {
             "hashes": [
                 "sha256:2f6abc8cab7ec5114a7a9a3660ab629ec142556957220aa82857dc9b4381490d",
@@ -67,6 +74,7 @@
                 "sha256:20d94839b81d8d97194a911fc248d78e9df9ed953016e575dc6bd4c717b99e6e",
                 "sha256:3ef1e3c6f0c35e6fb965fa455020c95bb1852822f2659046ae25f01852611395"
             ],
+            "index": "pypi",
             "version": "==3.1"
         },
         "django-s3-folder-storage": {
@@ -83,13 +91,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==1.10.1"
-        },
-        "docutils": {
-            "hashes": [
-                "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af",
-                "sha256:c2de3a60e9e7d07be26b7f2b00ca0309c207e06c100f9cc2a94931fc75a478fc"
-            ],
-            "version": "==0.16"
         },
         "gunicorn": {
             "hashes": [
@@ -173,6 +174,14 @@
                 "sha256:921a37e2aefc64145e7b73d50c71bb4f26f46e4c9f414dc648c6245ff92cf7db"
             ],
             "version": "==0.3.3"
+        },
+        "sentry-sdk": {
+            "hashes": [
+                "sha256:96a0e494b243a81065ec7ab73457d16719fb955ed9e469c8e4577ba737bc836e",
+                "sha256:a698993f3abbe06e88e8a3c8b61c8a79c12f62e503f1a23eda30c3921f0525a9"
+            ],
+            "index": "pypi",
+            "version": "==0.17.7"
         },
         "six": {
             "hashes": [

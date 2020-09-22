@@ -456,3 +456,32 @@ def home(request):
 * Executar o servidor local `python manage.py runserver`
 
 * Fazer o deploy no heroku
+
+## 25. Monitorando Erros com Sentry
+* Cadastrar o projeto no site sentry.io
+* Instalar a biblioteca `pipenv install sentry-sdk`
+* Criar a variável SENTRY_DNS no .env:
+`"https://<codigo extraido do site sentry.io>.ingest.sentry.io/5437733"`
+* Inserir no final do arquivo env-sample a variável criada `SENTRY_DNS`
+* Inserir no final do arquivo settings.py a linha:
+`SENTRY_DNS = config('SENTRY_DNS', default=None)`
+* Inserir no final do arquivo settings.py:
+```
+if SENTRY_DNS:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn=SENTRY_DNS,
+        integrations=[DjangoIntegration()],
+        traces_sample_rate=1.0,
+
+        # If you wish to associate users to errors (assuming you are using
+        # django.contrib.auth) you may enable sending PII data.
+        send_default_pii=True
+    )
+```
+* Incluir um erro no arquivo views.py dentro da função home `raise ValueError()`, isso vai ativar o monitor no site sentry.io
+* Encaminhar para o heroku a variável SENTRY_DNS através do comando `heroku config: set SENTRY_DNS=https://...`
+
+* Ler conteúdo da página https://12factor.net/pt_br/
