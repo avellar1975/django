@@ -458,6 +458,7 @@ def home(request):
 * Fazer o deploy no heroku
 
 ## 25. Monitorando Erros com Sentry
+
 * Cadastrar o projeto no site sentry.io
 * Instalar a biblioteca `pipenv install sentry-sdk`
 * Criar a variável SENTRY_DNS no .env:
