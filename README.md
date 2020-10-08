@@ -21,7 +21,7 @@ git clone git@github.com:avellar1975/django.git
 <kbd>export PIPENV_VENV_IN_PROJECT=1</kbd>
 (No caso do Windows precisa inserir como variável de ambiente no Painel de Controle)
  <p>Isso vai garatir que o diretório .venv fique na pasta do projeto.</p>
- 
+
 ```
 cd django
 
@@ -429,3 +429,8 @@ if SENTRY_DNS:
 * Incluir um erro no arquivo views.py dentro da função home `raise ValueError()`, isso vai ativar o monitor no site sentry.io
 * Encaminhar para o heroku a variável SENTRY_DNS através do comando `heroku config: set SENTRY_DNS=https://...`
 * Ler conteúdo da página https://12factor.net/pt_br/
+
+## 26. Twitter Bootstrap e Layoutit
+
+* Montar o layout na página do Layoutit
+* Fazer Donwload do arquivo .zip
