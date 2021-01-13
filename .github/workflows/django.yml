@@ -1,4 +1,4 @@
-name: Django CI
+name: Python application
 
 on: [pull_request]
 
@@ -42,9 +42,3 @@ jobs:
         CODECOV_TOKEN: "a25e3e4c-71da-4e0c-9dd2-db308c481bb4"
       run: |
         pipenv run codecov
-        
-        
-        
-        
-        
-        
