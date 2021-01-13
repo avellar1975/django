@@ -38,6 +38,8 @@ pipenv install
 pipenv install django
 
 pipenv install -d flake8
+
+A opção -d o pipenv install indica que o pacote será utilizado somente no ambiente de desenvolvimento
 ```
 
 <p>Para que o flake8 não faça a verificação dos arquivos do .venv é preciso
