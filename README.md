@@ -32,6 +32,7 @@ pipenv install
 <p>Isso vai criar os arquivos Pipfile, Pipfile.lock e a pasta .venv</p>
 
 ## 3. Instalar a biblioteca django e flake8 via pipenv
+> Antes de entrar no ambiente virtual
 
 ```
 pipenv install django
