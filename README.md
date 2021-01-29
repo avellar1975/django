@@ -1,4 +1,4 @@
-# django
+# Django
 Criação de repositório para treinar curso em Django
 
 [![Build Status](https://travis-ci.org/avellar1975/django.svg?branch=master)](https://travis-ci.org/avellar1975/django)
@@ -268,6 +268,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 * Executar o comando `python manage.py collectstatic`
 
 ## 20. Configurar os usuários o S3 da ALLOWED_HOSTS
+> O Amazon Simple Storage Service é armazenamento para a Internet. Ele foi projetado para facilitar a computação de escala na web para os desenvolvedores.
+
+>O Amazon S3 tem uma interface de serviços da web simples que você pode usar para armazenar e recuperar qualquer quantidade de dados, a qualquer momento, em qualquer lugar da web. Ela concede acesso a todos os desenvolvedores para a mesma infraestrutura altamente dimensionável, confiável, segura, rápida e econômica que a Amazon utiliza para rodar a sua própria rede global de sites da web. O serviço visa maximizar os benefícios de escala e poder passar esses benefícios para os desenvolvedores.
+
 * Inserir no arquivo .env os valores de AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY e AWS_STORAGE_BUCKET_NAME=curso-python-django
 * Executar as configurações de AIM e S3 na Amazon
 * Instalar a biblioteca `pipenv install django_s3_folder_storage`
