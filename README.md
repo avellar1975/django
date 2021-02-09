@@ -8,7 +8,7 @@ Criação de repositório para treinar curso em Django
 
 https://python.radikaro.com/
 
-## 1.  Criar repositório com README, LICENCE e gitignore (python)
+## 1.  Criar repositório com README, LICENCE e gitignore (python).
 <p>Após criar o repositório público no Github com os três arquivos, clonar o repositório
 na máquina local.</p>
 
