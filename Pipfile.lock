@@ -172,11 +172,8 @@
             "version": "==0.3.4"
         },
         "sentry-sdk": {
-            "hashes": [
-                "sha256:9044b616ec6663cd50794fb3362efd87586e476e7b51ef2439a711d6569aede7",
-                "sha256:efc65e5ffd38324797a7e1dfc8a4e74b62ea6f56a59df5bb03217b84d58dff6a"
-            ],
-            "version": "==0.20.2"
+            "hashes": [],
+            "version": "==1.7.0"
         },
         "six": {
             "hashes": [
